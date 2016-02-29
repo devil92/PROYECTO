@@ -1,0 +1,120 @@
+#general {
+width:1240px; 
+height: 800px;
+background-color: green;
+margin:0px auto;
+}
+#izquierda {
+width:1060px; 
+height:768px;
+float: left;
+}
+#cabecera {
+width:1000px;
+height:180px;	
+}
+
+#fondo {
+width:1060px;
+height:180px;	
+}
+
+#menu {
+background-color:#B15900;	
+width:1060px; 
+padding-left:0px;
+overflow-y: auto;
+margin-top:0px;
+margin-bottom:0px;
+}
+#listamenu {
+background-color:#2175bc;	
+width:1060px; 
+padding-left:0px;
+margin-top:0px;
+margin-bottom:0px;
+}
+
+#listamenu li {
+display: inline;
+float: left;
+}
+
+#listamenu li a {
+
+font-family: Arial;
+font-size:11px;
+text-decoration: none;
+float:left;
+padding: 20px;
+background-color: #2175bc;
+color: #fff;
+}
+
+
+#temas {
+background-color:black;
+color:white;	
+width:1060px; 
+height: 535px;	
+}
+#panel {
+margin-top:0px;
+background-color:black;
+color:white;	
+width:1060px; 
+height: 535px;
+padding: 20px 20px 20px 20px;	
+}
+#porculero {
+	margin-top:0px;
+}
+
+#derecha {
+width:180px; 
+height:750px;	
+float: left;
+}
+
+#login {
+width:152,5px; 
+height:200px;
+background-color:white;	
+padding-top:20px;
+padding-left:28px;
+padding-bottom:20px;
+background-color: #D87410;
+}
+
+#loginaso {
+width:170px; 
+height:200px;
+
+}
+
+#noticias {
+padding-top:20px;
+width:180px; 
+height:327px;
+background-color:#FF9932;
+	
+}
+#piedepagina {
+height:33px;
+float:left;
+width:1240px;
+
+}
+
+#derechos {
+float:left;	
+height:33px;
+width:1000px;
+}
+
+#copy {
+float:right;
+height:33px;
+padding-right:10px;	
+
+}

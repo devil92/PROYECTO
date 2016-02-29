@@ -1,0 +1,26 @@
+#contenedor{
+	width:250px;
+    background-color:#BF00FF;
+    /*background-color:#356AA0;*/
+    /*box-shadow: 0 0 0 9px rgba(128,0,0,.1);*/
+    /*Margen de sombra alrededor del contenedor 8px negro*/
+    box-shadow: 3px 3px 10px 5px rgba(0,0,0,.8);
+    /*Las 3 líneas siguientes, sirven para el borde redondeado
+     * pero para diferentes navegadores*/
+    -webkit-border-radius:5px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+	margin:0px auto;
+}
+#cuerpo{
+    background:#ececec;
+    border:solid #ccc;
+    /*aumentando el 2px 'aparece' un borde*/
+    border-width: 2px 0;
+    padding:15px 35px;
+}
+ 
+label{
+    color: #666;
+    font-weight: bold
+}

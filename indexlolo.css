@@ -1,0 +1,124 @@
+#general {
+width:1240px; 
+
+margin:0px auto;
+
+}
+#izquierda {
+width:1060px; 
+float: left;
+}
+#cabecera {
+width:1000px;
+height:180px;	
+}
+
+#fondo {
+width:1060px;
+height:180px;	
+}
+
+#menu {
+background-color:#2175bc;	
+width:1060px; 
+padding-left:0px;
+overflow-y: auto;
+margin-top:0px;
+margin-bottom:0px;
+}
+#listamenu {
+background-color:#2175bc;	
+width:1060px; 
+padding-left:0px;
+margin-top:0px;
+margin-bottom:0px;
+}
+
+#listamenu li {
+display: inline;
+float: left;
+}
+
+#listamenu li a {
+
+font-family: Arial;
+font-size:11px;
+text-decoration: none;
+float:left;
+padding: 20px;
+background-color: #2175bc;
+color: #fff;
+}
+
+/*contendero de cuerpo*/
+#temas {
+background-color:#8A4B08;
+color:black;	
+width:1020px; 
+min-height:325px;
+padding:20px 20px 20px 20px;
+}
+#panel {
+	border:2px;
+	color:black;
+	
+}
+/* nombre de foros*/
+.cuerpo1{
+	color: red;
+}
+.cuerpo2{
+	color: red;
+	text-align:right;
+}
+/* nombre temas*/
+.cuerpo2 td{
+	border: 1px solid black;
+	
+}
+.postusuario{
+	width:150px;
+	vertical-align:top;
+}
+
+.postcuerpo {
+	vertical-align:top;
+}
+
+#derecha {
+width:180px; 
+
+float: left;
+}
+
+#login {
+width:152,5px; 
+
+padding-top:20px;
+padding-left:28px;
+padding-bottom:20px;
+background-color: #2E64FE;
+}
+
+#loginaso {
+width:170px; 
+
+
+}
+
+#noticias {
+padding:20px 0px 20px 20px;
+width:160px; 
+
+background-color:#045FB4;
+	
+}
+
+#piedepagina {
+height:33px;
+width:1240px;
+float:left;
+background-color:#2175bc;
+}
+
+
