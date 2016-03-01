@@ -1,5 +1,5 @@
 <?php
-include_once("./db_configuration.php");
+include("db_configuration.php");
 ?>
 <?php
 	 
