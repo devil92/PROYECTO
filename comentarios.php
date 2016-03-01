@@ -1,5 +1,5 @@
 <?php
-include_once("./db_configuration.php");
+include_once("db_configuration.php");
 ?>
 <html lang="en">
   <head>
@@ -24,7 +24,7 @@ include_once("./db_configuration.php");
     <?php
 
           //CREATING THE CONNECTION
-          $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
+          $connection = new mysqli($_ENV['OPENSHIFT_MYSQL_DB_HOST'], $_ENV['OPENSHIFT_MYSQL_DB_USERNAME'], $_ENV['OPENSHIFT_MYSQL_DB_PASSWORD'], "forololo");
           //TESTING IF THE CONNECTION WAS RIGHT
           if ($connection->connect_errno) {
               printf("Connection failed: %s\n", $mysqli->connect_error);
