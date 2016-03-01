@@ -1,5 +1,5 @@
 <?php
-include_once("db_configuration.php");
+include_once("./db_configuration.php");
 ?>
 <?php
 			$tema = $_GET["id_tema"];
