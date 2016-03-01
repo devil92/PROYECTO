@@ -12,7 +12,7 @@ include("db_configuration.php");
 <optgroup>
 <?php
 //CREATING THE CONNECTION
-$connection = new mysqli($db_host, $db_user, $db_password, $db_name);
+$connection = new mysqli("127.4.136.2:3306", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "forololo");
 $consultar="SELECT * FROM usuarios;";
 var_dump($consultar);
 if ($result = $connection->query($consultar)) {
@@ -32,7 +32,7 @@ if ($result = $connection->query($consultar)) {
 <select class="registro" name="id_post">
 <optgroup>
 <?php //CREATING THE CONNECTION
-$connection = new mysqli($db_host, $db_user, $db_password, $db_name);
+$connection = new mysqli("127.4.136.2:3306", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "forololo");
 $consultar="SELECT * FROM post;";
 var_dump($consultar);
 if ($result = $connection->query($consultar)) {
@@ -60,7 +60,7 @@ if ($result = $connection->query($consultar)) {
 <?php else: ?>
 <?php
       //CREATING THE CONNECTION
-      $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
+      $connection = new mysqli("127.4.136.2:3306", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "forololo");
       //TESTING IF THE CONNECTION WAS RIGHT
       if ($connection->connect_errno) {
           printf("Connection failed: %s\n", $connection->connect_error);
