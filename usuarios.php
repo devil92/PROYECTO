@@ -1,4 +1,17 @@
 <?php
+
+session_start();
+
+    if (isset($_SESSION['tipoacceso'])&&($_SESSION['tipoacceso']=='admin')){
+        echo "";
+    }
+    else {
+        echo "<h2>Acceso denegado, redireccionando...</h2>";
+        echo "<style>div {display:none;}<style>";
+    header('Refresh:1; url=indexlolo.php',True,303);
+}
+?>
+<?php
 include("db_configuration.php");
 ?>
 <html lang="en">
@@ -24,7 +37,7 @@ include("db_configuration.php");
     <?php
 
           //CREATING THE CONNECTION
-          $connection = new mysqli("127.4.136.2:3306", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "forololo");
+          $connection = new mysqli("localhost", "root", "", "forololo");
           //TESTING IF THE CONNECTION WAS RIGHT
           if ($connection->connect_errno) {
               printf("Connection failed: %s\n", $mysqli->connect_error);
@@ -35,7 +48,8 @@ include("db_configuration.php");
           if ($result = $connection->query("SELECT * FROM usuarios;")) {
 ///              printf("<p>The select query returned %d rows.</p>", $result->num_rows);
     }
-    ?>
+	?>
+
 <table border="1" id="tabla">
   <tr>
     <td><b>id_usuario</td></b>
@@ -66,8 +80,7 @@ include("db_configuration.php");
 				   echo "<td><a href='eliminarusu.php?id=".$obj->id_usuario."'><img src='borrar.jpg'></td>";
                    echo "</tr>";
                }
-      ?>
-
+      ?>  
     </table>
 	<p>
 	</a><input name="anadirusu" a class='ajax' href="anadirusu.php" title="Añadir usuario" type="submit" id="boton" value="Añadir" class="boton"/></p>
@@ -79,3 +92,4 @@ include("db_configuration.php");
 
 </body>
 </html>
+

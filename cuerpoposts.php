@@ -5,7 +5,7 @@ include("db_configuration.php");
 			$tema = $_GET["id_tema"];
 			
           //CREATING THE CONNECTION
-          $connection = new mysqli("127.4.136.2:3306", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "forololo");
+          $connection = new mysqli("localhost", "root", "", "forololo");
           //TESTING IF THE CONNECTION WAS RIGHT
           if ($connection->connect_errno) {
               printf("Connection failed: %s\n", $mysqli->connect_error);

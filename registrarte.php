@@ -38,7 +38,7 @@ include("db_configuration.php");
 <?php else: ?>
 <?php
       //CREATING THE CONNECTION
-      $connection = new mysqli("127.4.136.2:3306", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "forololo");
+      $connection = new mysqli("localhost", "root", "", "forololo");
       //TESTING IF THE CONNECTION WAS RIGHT
       if ($connection->connect_errno) {
           printf("Connection failed: %s\n", $connection->connect_error);
@@ -46,7 +46,7 @@ include("db_configuration.php");
       }
       //MAKING A SELECT QUERY
       /* Consultas de selección que devuelven un conjunto de resultados */
-      if ($result = $connection->query("insert into usuarios (nombre, apellidos, email, contrasena, nickusuario) VALUES ('".$_POST['nombre']."','".$_POST['apellidos']."','".$_POST['email']."',md5('".$_POST['contrasena']."'),'".$_POST['nickusuario']."')")) {
+      if ($result = $connection->query("insert into usuarios (nombre, apellidos, email, contrasena, nickusuario,tipoacceso) VALUES ('".$_POST['nombre']."','".$_POST['apellidos']."','".$_POST['email']."',md5('".$_POST['contrasena']."'),'".$_POST['nickusuario']."','usuario')")) {
 
 	  echo "<p>Su usuario se ha creado correctamente</p>";
 	  }else{

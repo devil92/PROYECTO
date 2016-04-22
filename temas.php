@@ -1,4 +1,17 @@
 <?php
+
+session_start();
+
+    if (isset($_SESSION['tipoacceso'])&&($_SESSION['tipoacceso']=='admin')){
+        echo "";
+    }
+    else {
+        echo "<h2>Acceso denegado, redireccionando...</h2>";
+        echo "<style>div {display:none;}<style>";
+    header('Refresh:1; url=indexlolo.php',True,303);
+}
+?>
+<?php
 include("db_configuration.php");
 ?>
 <html lang="en">
@@ -24,7 +37,7 @@ include("db_configuration.php");
     <?php
 
           //CREATING THE CONNECTION
-          $connection = new mysqli("127.4.136.2:3306", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "forololo");
+          $connection = new mysqli("localhost", "root", "", "forololo");
           //TESTING IF THE CONNECTION WAS RIGHT
           if ($connection->connect_errno) {
               printf("Connection failed: %s\n", $mysqli->connect_error);

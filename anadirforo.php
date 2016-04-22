@@ -1,4 +1,11 @@
 <?php
+
+session_start();
+
+if(isset($_SESSION['id']) && isset($_SESSION['ns']) && $_SESSION['ns'] == 'admin'){
+
+?>
+<?php
 include("db_configuration.php");
 ?>
 <html>
@@ -12,7 +19,7 @@ include("db_configuration.php");
 <optgroup>
 <?php
 //CREATING THE CONNECTION
-$connection = new mysqli("127.4.136.2:3306", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "forololo");
+$connection = new mysqli("localhost", "root", "", "forololo");
 $consultar="SELECT * FROM usuarios;";
 var_dump($consultar);
 if ($result = $connection->query($consultar)) {
@@ -41,7 +48,7 @@ if ($result = $connection->query($consultar)) {
 <?php else: ?>
 <?php
       //CREATING THE CONNECTION
-      $connection = new mysqli("127.4.136.2:3306", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "forololo");
+      $connection = new mysqli("localhost", "root", "", "forololo");
       //TESTING IF THE CONNECTION WAS RIGHT
       if ($connection->connect_errno) {
           printf("Connection failed: %s\n", $connection->connect_error);
@@ -64,3 +71,10 @@ if ($result = $connection->query($consultar)) {
 	  
 ?>	  
 <?php endif ?>
+<?php
+}else{
+	echo "<p>No tiene los permisos adecuados</p>";
+
+}
+header("Refresh:5; url=indexlolo.php",true,303);
+	?>

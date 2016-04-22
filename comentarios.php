@@ -1,4 +1,17 @@
 <?php
+
+session_start();
+
+    if (isset($_SESSION['tipoacceso'])&&($_SESSION['tipoacceso']=='admin')){
+        echo "";
+    }
+    else {
+        echo "<h2>Acceso denegado, redireccionando...</h2>";
+        echo "<style>div {display:none;}<style>";
+    header('Refresh:1; url=indexlolo.php',True,303);
+}
+?>
+<?php
 include_once("db_configuration.php");
 ?>
 <html lang="en">
@@ -24,8 +37,7 @@ include_once("db_configuration.php");
     <?php
 
           //CREATING THE CONNECTION
-          $connection = new mysqli($_ENV['OPENSHIFT_MYSQL_DB_HOST'], $_ENV['OPENSHIFT_MYSQL_DB_USERNAME'], $_ENV['OPENSHIFT_MYSQL_DB_PASSWORD'], "forololo");
-          //TESTING IF THE CONNECTION WAS RIGHT
+			$connection = new mysqli("localhost", "root", "", "forololo");          //TESTING IF THE CONNECTION WAS RIGHT
           if ($connection->connect_errno) {
               printf("Connection failed: %s\n", $mysqli->connect_error);
               exit();

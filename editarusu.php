@@ -1,30 +1,61 @@
 <?php
+
+session_start();
+
+    if (isset($_SESSION['tipoacceso'])&&($_SESSION['tipoacceso']=='admin')){
+        echo "";
+    }
+    else {
+        echo "<h2>Acceso denegado, redireccionando...</h2>";
+        echo "<style>div {display:none;}<style>";
+    header('Refresh:1; url=indexlolo.php',True,303);
+}
+?>
+<?php
 include("db_configuration.php");
 ?>
 <html>
 <head></head>
 <body>
 <div id="cuerpo">
+
 <?php if (!isset($_POST["Guardar"])) : ?>
+			<?php
 			
-			<form id="editusuadmin" method="post" action="editarusu.php" >
-				<p id="porculero"><label for="nombre">Nuevo Nombre de usuario:</label></p>
-                        <input name="cambiarnombre" type="text" id="nickusuario" class="nombre" ></p>
-				<p><label for="apellidos">Nuevo Apellido:</label></p>
-                        <input name="cambiarapellido" type="text" id="apellidos" class="apellidos" ></p>
-						<p><label for="email">Nuevo email:</label></p>
-                        <input name="cambiaremail" type="email" id="correo" class="email" ></p>
-				<p><label for="pass">Nueva contraseña:</label></p>
-                        <input name="cambiarpass" type="password" id="contrasena" class="contrasena" ></p>
-						<?php echo "<input name='idaso' type='hidden' id='principal' value=".$_GET['id'].">";?>
+			 //CREATING THE CONNECTION
+      $connection = new mysqli("localhost", "root", "", "forololo");
+      //TESTING IF THE CONNECTION WAS RIGHT
+      if ($connection->connect_errno) {
+          printf("Connection failed: %s\n", $connection->connect_error);
+          exit();
+      }
+			$result=$connection->query("SELECT * FROM usuarios where id_usuario=".$_GET['id']."");
+				$obj = $result->fetch_object();
+
+			echo "<form id='editusuadmin' method='post' action='editarusu.php' >";
+			echo "<p id='porculero'><label for='nombre'>Nuevo Nombre de usuario:</label></p>";
+            echo "  <input name='cambiarnombre' type='text' id='nickusuario' class='nombre' value="."'".$obj->nickusuario."'"."></p>";
+			echo " <p><label for='apellidos'>Nuevo Apellido:</label></p>";
+            echo " <input name='cambiarapellido' type='text' id='apellidos' class='apellidos' value="."'".$obj->apellidos."'"."></p>";
+			echo "	<p><label for='email'>Nuevo email:</label></p>";
+            echo "  <input name='cambiaremail' type='email' id='correo' class='email' value="."'".$obj->email."'"."></p>";
+			echo "	<label for='tipoacceso'>Tipo de usuario:</label></p>";
+			echo "			<select id='tipoacceso' name='tipoacceso'>";
+			echo "				<option value='usuario'>usuario</option>";
+			echo "				<option value='admin'>admin</option>";
+			echo "			</select>";
+			echo "	<p><label for='pass'>Nueva contraseña:</label></p>";
+            echo "   <input name='cambiarpass' type='password' id='contrasena' class='contrasena' ></p>";
+			echo "<input name='idaso' type='hidden' id='principal' value=".$_GET['id'].">";
 				
 
-				<p><input type="submit" value="Guardar" name="Guardar" /></p>
-            </div>
+			echo "	<p><input type='submit' value='Guardar' name='Guardar' /></p>";
+            echo "</div>";
+			?>
 			<?php else: ?>
 <?php
  //CREATING THE CONNECTION
-      $connection = new mysqli("127.4.136.2:3306", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "forololo");
+      $connection = new mysqli("localhost", "root", "", "forololo");
       //TESTING IF THE CONNECTION WAS RIGHT
       if ($connection->connect_errno) {
           printf("Connection failed: %s\n", $connection->connect_error);

@@ -26,7 +26,7 @@ include("db_configuration.php");
 <?php
 session_start();
       //CREATING THE CONNECTION
-      $connection = new mysqli("127.4.136.2:3306", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "forololo");
+      $connection = new mysqli("localhost", "root", "", "forololo");
       //TESTING IF THE CONNECTION WAS RIGHT
       if ($connection->connect_errno) {
           printf("Connection failed: %s\n", $connection->connect_error);
