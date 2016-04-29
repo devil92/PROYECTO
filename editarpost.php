@@ -24,36 +24,55 @@ include("db_configuration.php");
 
 					<p><label for="nombretema">Nombre tema:</label></p>
 <select class="registro" name="id_tema">
-<optgroup>
+
 <?php //CREATING THE CONNECTION
 $connection = new mysqli("localhost", "root", "", "forololo");
 $consultar="SELECT * FROM temas;";
-var_dump($consultar);
-if ($result = $connection->query($consultar)) {
-      	$result2 = $connection->query("SELECT * FROM temas");
-	while($obj = $result2->fetch_object()) {
-		echo "<option value=\"".$obj->id_tema."\">".$obj->nombre_tema."</option>";
-		echo "<br>";
+	if ($result = $connection->query($consultar)) {
+								$result2 = $connection->query("SELECT temas.id_tema FROM temas,post where temas.id_tema=post.id_tema and post.id_post=".$_GET['id']);
+								$actual=$result2->fetch_object()->id_tema;
+					
+								while($obj = $result->fetch_object()) {
+									var_dump($obj->id_tema);
+									if ($actual == $obj->id_tema){
+										echo "<option selected value=\"".$obj->id_tema."\">".$obj->nombre_tema."</option>";
+										echo "<br>";
+									}else{
+										echo "<option value=\"".$obj->id_tema."\">".$obj->nombre_tema."</option>";
+										echo "<br>";
+									}
 
 	}//cierra el WHILE
 ?>
-	</optgroup>
+
 	</select>
 <?php
 }//cierra el primer IF
-?>	
+?>
 
+<?php
+			 //CREATING THE CONNECTION
+		$connection = new mysqli("localhost", "root", "", "forololo");
+		//TESTING IF THE CONNECTION WAS RIGHT
+		if ($connection->connect_errno) {
+			printf("Connection failed: %s\n", $connection->connect_error);
+			exit();
+		}
+			$result=$connection->query("SELECT * FROM post where id_post=".$_GET['id']."");
+				$obj = $result->fetch_object();
 						
-                    <p><label for="nombre_post">Nombre Post:</label></p>
-                        <input name="nombre_post" type="text" id="nombre_post" class="nombre_post" ></p>
+                    echo "<p><label for='nombre_post'>Nombre Post:</label></p>";
+                    echo "<input name='nombre_post' type='text' id='nombre_post' class='nombre_post' value="."'".$obj->nombre_post."'"."></p>";
 						
-					<p><label for="texto_post">texto Post:</label></p>
-						<textarea name="texto_post" type="text" id="texto_post" class="texto_post" >	
-						</textarea>
-                    <p id="bot"><input name="Enviar" type="submit" id="boton" value="Enviar" class="boton"/></p>
-					<?php echo "<input name='get' type='hidden' id='principa' value=".$_GET['id'].">";?>
-                </form>
-            </div>
+					echo "<p><label for='texto_post'>texto Post:</label></p>";
+					echo "<textarea name='texto_post' type='text' id='texto_post' class='texto_post' >".$obj->texto_post."</textarea>";
+					
+                    echo "<p id='bot'><input name='Enviar' type='submit' id='boton' value='Enviar' class='boton'/></p>";
+					echo "<input name='get' type='hidden' id='principa' value=".$_GET['id'].">";
+					echo "</form>";
+					echo "</div>";
+					
+?>
 </body>
 </html>
 

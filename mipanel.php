@@ -1,9 +1,19 @@
 <?php
-include("db_configuration.php");
+
+session_start();
+
+    if (isset($_SESSION['usuario'])&&($_SESSION['usuario']!=='NULL')){
+        echo "";
+    }
+    else {
+        echo "<h2>Acceso denegado, redireccionando...</h2>";
+        echo "<style>div {display:none;}<style>";
+    header('Refresh:1; url=indexlolo.php',True,303);
+}
 ?>
 <?php
-session_start();
-?> 
+include("db_configuration.php");
+?>
 <html>
 <head><title>RICON DE LOLASO</title></head>
 <link rel="stylesheet" type="text/css" href="indexlolo.css"> 
@@ -18,10 +28,6 @@ session_start();
 		<div id="menu"> 
 			<ul id="listamenu">
 				<li><a href="indexlolo.php">INICIO</a></li>
-				<li><a href="indexlolo.php">INFORMATICA</a></li>
-				<li><a href="indexlolo.php">DEPORTES</a></li>
-				<li><a href="indexlolo.php">E-SPORT</a></li>
-				<li><a href="indexlolo.php">JUEGOS</a></li>
 			</ul>	
 		</div>
 		<div id="temas">

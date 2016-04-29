@@ -22,35 +22,48 @@ include("db_configuration.php");
                 <form method="post" action="editarcomen.php" >
 					<p><label for="nickusuario">Nick usuario:</label></p>
 						<select class="registro" name="id_usuario" value=".$_POST['nickusuario'].">
-						<optgroup>
 						<?php
 						//CREATING THE CONNECTION
 						$connection = new mysqli("localhost", "root", "", "forololo");
 						$consultar="SELECT * FROM usuarios;";
-						var_dump($consultar);
 						if ($result = $connection->query($consultar)) {
-								$result2 = $connection->query("SELECT * FROM usuarios");
-							while($obj = $result2->fetch_object()) {
-								echo "<option value=\"".$obj->id_usuario."\">".$obj->nickusuario."</option>";
+							$result2 = $connection->query("SELECT usuarios.id_usuario FROM usuarios,comentarios where usuarios.id_usuario=comentarios.id_usuario and comentarios.id_comentario=".$_GET['id']);
+							$actual=$result2->fetch_object()->id_usuario;
+		
+						while($obj = $result->fetch_object()) {
+						var_dump($obj->id_usuario);
+							if ($actual == $obj->id_usuario){
+								echo "<option selected value=\"".$obj->id_usuario."\">".$obj->nickusuario."</option>";
 								echo "<br>";
+							}else{
+							echo "<option value=\"".$obj->id_usuario."\">".$obj->nickusuario."</option>";
+							echo "<br>";
+							}
+	}//cierra el WHILE
+?>
 
-							}//cierra el WHILE
-						?>
-							</optgroup>
-							</select>
+	</select>
+<?php
+}//cierra el primer IF
+?>	
 						<?php
-						}//cierra el primer IF
-						?>	
-                    <p><label for="texto_comen">texto comen:</label></p>
-                        <textarea name="texto_comen" type="text" class="texto_comen" ></textarea></p>
+									 //CREATING THE CONNECTION
+		$connection = new mysqli("localhost", "root", "", "forololo");
+		//TESTING IF THE CONNECTION WAS RIGHT
+		if ($connection->connect_errno) {
+			printf("Connection failed: %s\n", $connection->connect_error);
+			exit();
+		}
+			$result=$connection->query("SELECT * FROM comentarios where id_comentario=".$_GET['id']."");
+				$obj = $result->fetch_object();
+						echo "<p><label for='texto_comen'>texto comen:</label></p>";
+                        echo "<textarea name='texto_comen' type='text' class='texto_comen' >".$obj->texto_comen."</textarea></p>";
 
-                    <p id="bot"><input name="Enviar" type="submit" id="boton" value="Enviar" class="boton"/></p>
-					<?php 
-					echo "<input name='get' type='hidden' value=".$_GET['id'].">";
-					?>
-                </form>
-            </div>
-
+						echo "<p id='bot'><input name='Enviar' type='submit' id='boton' value='Enviar' class='boton'/></p>";
+						echo "<input name='get' type='hidden' value=".$_GET['id'].">";
+						echo "</form>";
+					echo "</div>";
+?>
 
 			<?php else: ?>
 			<?php
