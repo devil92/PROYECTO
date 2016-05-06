@@ -1,6 +1,11 @@
+
 <?php
 include("db_configuration.php");
 ?>
+<html>
+<head></head>
+<meta charset="utf-8">
+</html>
 <?php
 
           //CREATING THE CONNECTION
@@ -10,6 +15,7 @@ include("db_configuration.php");
               printf("Connection failed: %s\n", $mysqli->connect_error);
               exit();
           }
+		  			  if (!$connection->set_charset("utf8")){}
           //MAKING A SELECT QUERY
           /* Consultas de selección que devuelven un conjunto de resultados */
           if ($result = $connection->query("SELECT * FROM foro;")) {

@@ -27,7 +27,7 @@ session_start();
 
 			</ul>	
 		</div>
-		<div id="temas" border="1px">
+		<div id="temas" border="0px">
 		<?php
 		if(!isset($_GET["carga"])){
 			echo "<p><b>Foros</b><p>";

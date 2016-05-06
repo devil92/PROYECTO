@@ -20,8 +20,30 @@ include("db_configuration.php");
 <div id="cuerpo">
  <?php if (!isset($_POST["Enviar"])) : ?> 
                 <form id="form-login" method="post" action="editarpost.php" >
-					
+				<p><label for="nombreforo">Nombre foro:</label></p>	
+<select class="registro" name="id_foro">
 
+<?php //CREATING THE CONNECTION
+$connection = new mysqli("localhost", "root", "", "forololo");
+$consultar3="SELECT * FROM foro;";
+	if ($result = $connection->query($consultar)) {
+								$result3 = $connection->query("SELECT foro.id_foro FROM foro,temas,post where temas.id_foro=foro.id_foro and temas.id_tema=post.id_tema and post.id_post=".$_GET['id']);
+								$actual3=$result3->fetch_object()->id_foro;
+					
+								while($obj3 = $result3->fetch_object()) {
+									var_dump($obj3->id_foro);
+									if ($actual3 == $obj3->id_foro){
+										echo "<option selected value=\"".$obj->id_foro."\">".$obj->nombre_foro."</option>";
+										echo "<br>";
+									}else{
+										echo "<option value=\"".$obj->id_foro."\">".$obj->nombre_foro."</option>";
+										echo "<br>";
+									}
+
+	}//cierra el WHILE
+?>
+
+	</select>
 					<p><label for="nombretema">Nombre tema:</label></p>
 <select class="registro" name="id_tema">
 
@@ -88,6 +110,7 @@ $consultar="SELECT * FROM temas;";
       //MAKING A SELECT QUERY
       /* Consultas de selección que devuelven un conjunto de resultados */
 	  $idtema=$_POST['id_tema'];
+	  $idforo=$_POST['id_foro'];
 	  $nombrepost=$_POST['nombre_post'];
 	  $textopost=$_POST['texto_post'];
 	  $idpost=$_POST['get'];

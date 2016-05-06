@@ -32,6 +32,7 @@ session_start();
           printf("Connection failed: %s\n", $connection->connect_error);
           exit();
       }
+	  			  if (!$connection->set_charset("utf8")){}
       //MAKING A SELECT QUERY
 	  if($result2 = $connection->query("select * from usuarios where nickusuario='".$_SESSION['usuario']."';"));
 	  $obj2 = $result2->fetch_object();
@@ -46,7 +47,7 @@ session_start();
 		  echo "<p>No se ha podido enviar el comentario</p>";
 	  }
 	  
-	  header("Refresh:5; url=indexlolo.php?carga=2&id_tema=$idtema",true,303);
+	  header("Refresh:3; url=indexlolo.php?carga=2&id_tema=$idtema",true,303);
 
 
 	  
