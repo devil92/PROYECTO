@@ -43,7 +43,7 @@ include("db_configuration.php");
 						<p><label for="email">Nuevo email:</label></p>
                         <input name="cambiaremail" type="email" id="correo" class="email" ></p>
 				<p><label for="pass">Nueva contraseña:</label></p>
-                        <input name="cambiarpass" type="password" id="contrasena" class="contrasena" ></p>
+                        <input name="cambiarpass" type="password" id="contrasena" class="contrasena" required/></p>
 
 				<p><input type="submit" value="Guardar" name="Guardar" /></p>
 				
@@ -65,7 +65,7 @@ include("db_configuration.php");
 	  $cambiaremail=$_POST['cambiaremail'];
 	  $cambiarpass=$_POST['cambiarpass'];
 	  $consulta="UPDATE usuarios SET nombre='$cambiarnombre',apellidos='$cambiarapellido', email='$cambiaremail', contrasena="."'".md5($cambiarpass)."'"." where nickusuario="."'".$_SESSION['usuario']."'".";";
-      var_dump($consulta);
+      //var_dump($consulta);
 	  if($connection->query($consulta)==true){
                 echo "Su usuario se ha modificado correctamente";
                 session_destroy();

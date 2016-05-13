@@ -34,6 +34,7 @@ include("db_configuration.php");
 						echo "<tr><td><img width='100' height='100' src='".$obj->foto."'/></td></tr>";
 						echo "<tr><td >".$obj->nickusuario."</td></tr>";
 						echo "<tr><td>".$obj->fechahora_creacion."</td></tr>";
+						echo "<tr><td>".$obj->tipoacceso."</td></tr>";
 						
 						echo "</table>";
 						
@@ -58,6 +59,8 @@ include("db_configuration.php");
 							echo "<tr><td><img width='100' height='100' src='".$obj2->foto."'/></td></tr>";
 							echo "<tr><td >".$obj2->nickusuario."</td></tr>";
 							echo "<tr><td>".$obj2->fechahora_comen."</td></tr>";
+							echo "<tr><td >".$obj->tipoacceso."</td></tr>";
+							
 						echo "</table>";
 
 						echo "</td><td class='postcuerpo'>";

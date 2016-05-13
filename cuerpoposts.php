@@ -3,6 +3,7 @@
 include("db_configuration.php");
 ?>
 <?php
+
 			$tema = $_GET["id_tema"];
 			
           //CREATING THE CONNECTION
@@ -14,12 +15,19 @@ include("db_configuration.php");
           }
 		  			  if (!$connection->set_charset("utf8")){}
           //MAKING A SELECT QUERY
-		  if($result2 = $connection->query("select * from usuarios where nickusuario='".$_SESSION['usuario']."';"));
-			$obj2 = $result2->fetch_object();
-			$id=$obj2->id_usuario;
-			
+		 // if($result2 = $connection->query("select * from usuarios where nickusuario='".$_POST["txtusuario"]."';"));
+		//	$obj2 = $result2->fetch_object();
+		//	$id=$obj2->id_usuario;
+?>			
+			<?php  if (!isset($_SESSION['usuario'])) : ?>
+			<?php else: ?>
+			<?php
+			if ($_SESSION["tipoacceso"] !== "null") {
 			echo "<form action='indexlolo.php?carga=4' method='POST' align='right'><input type='submit' value='Nuevo Post' name='nuevopost'/></form>";
-			
+			};
+			?>
+			<?php endif; ?>
+			<?php
           /* Consultas de selección que devuelven un conjunto de resultados */
           if ($result = $connection->query("SELECT * FROM post where id_tema=".$tema.";")) {
 ///              printf("<p>The select query returned %d rows.</p>", $result->num_rows);
