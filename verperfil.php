@@ -20,7 +20,7 @@ include("db_configuration.php");
 <style type="text/css"> </style> 
 <?php
  //CREATING THE CONNECTION
-      $connection = new mysqli("localhost", "root", "", "forololo");
+      $connection = new mysqli("phplolo-forololo.rhcloud.com", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "phplolo");
       //TESTING IF THE CONNECTION WAS RIGHT
       if ($connection->connect_errno) {
           printf("Connection failed: %s\n", $connection->connect_error);

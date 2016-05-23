@@ -19,7 +19,7 @@ include("db_configuration.php");
 <optgroup>
 <?php
 //CREATING THE CONNECTION
-$connection = new mysqli("localhost", "root", "", "forololo");
+$connection = new mysqli("phplolo-forololo.rhcloud.com", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "phplolo");
 $consultar="SELECT * FROM usuarios;";
 var_dump($consultar);
 if ($result = $connection->query($consultar)) {
@@ -39,7 +39,7 @@ if ($result = $connection->query($consultar)) {
 <select class="registro" name="id_post">
 <optgroup>
 <?php //CREATING THE CONNECTION
-$connection = new mysqli("localhost", "root", "", "forololo");
+$connection = new mysqli("phplolo-forololo.rhcloud.com", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "phplolo");
 $consultar="SELECT * FROM post;";
 var_dump($consultar);
 if ($result = $connection->query($consultar)) {
@@ -67,7 +67,7 @@ if ($result = $connection->query($consultar)) {
 <?php else: ?>
 <?php
       //CREATING THE CONNECTION
-      $connection = new mysqli("localhost", "root", "", "forololo");
+      $connection = new mysqli("phplolo-forololo.rhcloud.com", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "phplolo");
       //TESTING IF THE CONNECTION WAS RIGHT
       if ($connection->connect_errno) {
           printf("Connection failed: %s\n", $connection->connect_error);

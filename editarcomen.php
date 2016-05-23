@@ -24,7 +24,7 @@ include("db_configuration.php");
 						<select class="registro" name="id_usuario" value=".$_POST['nickusuario'].">
 						<?php
 						//CREATING THE CONNECTION
-						$connection = new mysqli("localhost", "root", "", "forololo");
+						$connection = new mysqli("phplolo-forololo.rhcloud.com", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "phplolo");
 						$consultar="SELECT * FROM usuarios;";
 						if ($result = $connection->query($consultar)) {
 							$result2 = $connection->query("SELECT usuarios.id_usuario FROM usuarios,comentarios where usuarios.id_usuario=comentarios.id_usuario and comentarios.id_comentario=".$_GET['id']);
@@ -48,7 +48,7 @@ include("db_configuration.php");
 ?>	
 						<?php
 									 //CREATING THE CONNECTION
-		$connection = new mysqli("localhost", "root", "", "forololo");
+		$connection = new mysqli("phplolo-forololo.rhcloud.com", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "phplolo");
 		//TESTING IF THE CONNECTION WAS RIGHT
 		if ($connection->connect_errno) {
 			printf("Connection failed: %s\n", $connection->connect_error);
@@ -68,7 +68,7 @@ include("db_configuration.php");
 			<?php else: ?>
 			<?php
  //CREATING THE CONNECTION
-      $connection = new mysqli("localhost", "root", "", "forololo");
+      $connection = new mysqli("phplolo-forololo.rhcloud.com", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "phplolo");
       //TESTING IF THE CONNECTION WAS RIGHT
       if ($connection->connect_errno) {
           printf("Connection failed: %s\n", $connection->connect_error);

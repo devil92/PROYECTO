@@ -28,7 +28,7 @@ include("db_configuration.php");
 <select class="registro" name="id_tema">
 
 <?php //CREATING THE CONNECTION
-$connection = new mysqli("localhost", "root", "", "forololo");
+$connection = new mysqli("phplolo-forololo.rhcloud.com", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "phplolo");
 $consultar="SELECT temas.id_tema,temas.nombre_tema,foro.id_foro, foro.nombre_foro FROM temas,foro where temas.id_foro=foro.id_foro";
 	if ($result = $connection->query($consultar)) {
 								$result2 = $connection->query("SELECT id_tema FROM post where id_post=".$_GET['id']);
@@ -53,7 +53,7 @@ $consultar="SELECT temas.id_tema,temas.nombre_tema,foro.id_foro, foro.nombre_for
 	</select>
 <?php
 			 //CREATING THE CONNECTION
-		$connection = new mysqli("localhost", "root", "", "forololo");
+		$connection = new mysqli("phplolo-forololo.rhcloud.com", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "phplolo");
 		//TESTING IF THE CONNECTION WAS RIGHT
 		if ($connection->connect_errno) {
 			printf("Connection failed: %s\n", $connection->connect_error);
@@ -81,7 +81,7 @@ $consultar="SELECT temas.id_tema,temas.nombre_tema,foro.id_foro, foro.nombre_for
 
 <?php
  //CREATING THE CONNECTION
-      $connection = new mysqli("localhost", "root", "", "forololo");
+      $connection = new mysqli("phplolo-forololo.rhcloud.com", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "phplolo");
       //TESTING IF THE CONNECTION WAS RIGHT
       if ($connection->connect_errno) {
           printf("Connection failed: %s\n", $connection->connect_error);
