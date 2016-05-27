@@ -30,7 +30,7 @@ include("db_configuration.php");
                    echo "<tr>";
                    echo "<td class='cuerpo1'><a href='indexlolo.php?carga=1&id_foro=".$obj->id_foro."'>".$obj->nombre_foro."</a></td>";
 				   echo "</tr>";
-				   $result2 = $connection->query("select count(post.id_post) as cuenta,temas.nombre_tema,temas.id_tema from post,temas,foro where foro.id_foro=temas.id_foro and foro.id_foro=".$obj->id_foro." group by temas.id_tema order by cuenta asc limit 2;   ");
+				   $result2 = $connection->query("select count(post.id_post) as cuenta,temas.nombre_tema,temas.id_tema from post,temas,foro where foro.id_foro=temas.id_foro and foro.id_foro=".$obj->id_foro." group by temas.id_tema order by cuenta asc limit 4;   ");
 				   echo "<tr><td><table class='cuerpo2'>";
 				   while($obj2 = $result2->fetch_object()) {
 					
