@@ -3,7 +3,7 @@ include("db_configuration.php");
 ?>
 <?php
 	 
-$connection = new mysqli("phplolo-forololo.rhcloud.com", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "phplolo");
+$connection = new mysqli($db_host, $db_user, $db_password, $db_name);
  
 	 $query = "INSERT INTO Usuarios (nombre, apellidos, email, contrasena, nickusuario) VALUES ('$_POST[nombre]',$_POST[apellidos]',$_POST[email]', '$_POST[contrasena]', $_POST[nickusuario]')";
 	 

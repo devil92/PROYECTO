@@ -7,7 +7,7 @@ include("db_configuration.php");
 			$tema = $_GET["id_tema"];
 			
           //CREATING THE CONNECTION
-          $connection = new mysqli("phplolo-forololo.rhcloud.com", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "phplolo");
+          $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
           //TESTING IF THE CONNECTION WAS RIGHT
           if ($connection->connect_errno) {
               printf("Connection failed: %s\n", $mysqli->connect_error);

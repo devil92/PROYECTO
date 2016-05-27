@@ -19,7 +19,7 @@ include("db_configuration.php");
 <optgroup>
 <?php
 //CREATING THE CONNECTION
-$connection = new mysqli("phplolo-forololo.rhcloud.com", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "phplolo");
+$connection = new mysqli($db_host, $db_user, $db_password, $db_name);
 $consultar="SELECT * FROM usuarios;";
 var_dump($consultar);
 if ($result = $connection->query($consultar)) {
@@ -48,7 +48,7 @@ if ($result = $connection->query($consultar)) {
 <?php else: ?>
 <?php
       //CREATING THE CONNECTION
-      $connection = new mysqli("phplolo-forololo.rhcloud.com", "adminz2xUtyZ", "w3z4Rg5Rx-zQ", "phplolo");
+      $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
       //TESTING IF THE CONNECTION WAS RIGHT
       if ($connection->connect_errno) {
           printf("Connection failed: %s\n", $connection->connect_error);
