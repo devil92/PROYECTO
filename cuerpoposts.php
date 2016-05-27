@@ -23,7 +23,7 @@ include("db_configuration.php");
 			<?php else: ?>
 			<?php
 			if ($_SESSION["tipoacceso"] !== "null") {
-			echo "<form action='indexlolo.php?carga=4' method='POST' align='right'><input type='submit' value='Nuevo Post' name='nuevopost'/></form>";
+			echo "<form action='indexlolo.php?carga=4&temaso=$tema' method='POST' align='right'><input type='submit' value='Nuevo Post' name='nuevopost'/></form>";
 			};
 			?>
 			<?php endif; ?>
