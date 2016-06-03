@@ -93,7 +93,7 @@ $consultar="SELECT temas.id_tema,temas.nombre_tema,foro.id_foro, foro.nombre_for
 	  $nombrepost=$_POST['nombre_post'];
 	  $textopost=$_POST['texto_post'];
 	  $idpost=$_POST['get'];
-	  var_dump($_GET);
+	  //var_dump($_GET);
 	  $consulta="UPDATE post SET id_tema=$idtema, nombre_post='$nombrepost', texto_post='$textopost' where id_post=$idpost;";
 	  //echo $_POST['enviar'];
 		//echo $consulta;
