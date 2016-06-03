@@ -17,13 +17,13 @@ include("db_configuration.php");
 ///              printf("<p>The select query returned %d rows.</p>", $result->num_rows);
     }
 	
-//		$result2 = $connection->query("SELECT * FROM post,usuarios,comentarios where post.id_usuario=usuarios.id_usuario and comentarios.id_usuario=usuarios.id_usuario and id_post=".$post.";");
 		$result2 = $connection->query("SELECT * FROM usuarios,comentarios where usuarios.id_usuario=comentarios.id_usuario and comentarios.id_post=".$post.";");
-
+$result5 = $connection->query("SELECT foro.nombre_foro,temas.nombre_tema, post.nombre_post FROM foro,temas,post where foro.id_foro=temas.id_foro and temas.id_tema=post.id_tema and post.id_post=".$post.";");
 
               $obj = $result->fetch_object() ;
+			  $obj2 = $result5->fetch_object() ;
                    //PRINTING EACH ROW
-				   echo "<tr><td>#".$obj->id_post." - ".$obj->nombre_post."</td></tr>";
+				   echo "<tr><td>#".$obj->id_post." - ".$obj2->nombre_foro.">".$obj2->nombre_tema.">".$obj->nombre_post."</td></tr>";
 				   echo "<table border='solid' width='1020' >";				   
 				   echo "<tr>";
 				   
@@ -32,7 +32,7 @@ include("db_configuration.php");
 						
 						echo "<tr><td align='left'>#".$obj->id_usuario."</td></tr>";
 						echo "<tr><td><img width='100' height='100' src='".$obj->foto."'/></td></tr>";
-						echo "<tr><td >".$obj->nickusuario."</td></tr>";
+						echo "<tr><td>".$obj->nickusuario."</td></tr>";
 						echo "<tr><td>".$obj->fechahora_creacion."</td></tr>";
 						echo "<tr><td>".$obj->tipoacceso."</td></tr>";
 						

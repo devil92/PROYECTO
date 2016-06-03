@@ -59,7 +59,7 @@ include("db_configuration.php");
 		  echo "<p>El correo o nombre de usuario esta en uso</p>";
 	  }
 	  
-	  header('Refresh:5; url=usuarios.php',true,303);
+	  header('Refresh:0; url=usuarios.php',true,303);
 
 
 	  
@@ -68,7 +68,7 @@ include("db_configuration.php");
 <?php
 }else{
 	echo "<p>No tiene los permisos adecuados</p>";
-    header("Refresh:5; url=indexlolo.php",true,303);
+    header("Refresh:0; url=indexlolo.php",true,303);
 }
 
 	?>

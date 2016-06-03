@@ -22,7 +22,7 @@ include("db_configuration.php");
     <title>LISTADO TEMAS</title>
   </head>
   <body>
-  <table border="5" id="tablita">
+  <table border="5" id="tablita" style="margin-top:10px; margin-bottom:10px;">
   <tr>
     <td><b><a href="usuarios.php"> Usuarios </a></td></b>
     <td><b><a href="foros.php">Foros</a></td></b>
@@ -78,7 +78,7 @@ include("db_configuration.php");
       ?>
     </table>
 	<p>
-	</a><input name="anadirtema" a class='ajax' href="anadirtema.php" title="Añadir tema" type="submit" id="boton" value="Añadir" class="boton"/></p>
+	</a><input name="anadirusu" a class='ajax' href="anadirtema.php" title="Añadir temas" type="submit" id="boton" value="Añadir" style="margin-left:300px" class="boton"/ ></p>
 <script src="jquery.min.js"></script>
 <script src="jquery.colorbox.js"></script>
 <script>

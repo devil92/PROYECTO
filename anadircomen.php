@@ -82,7 +82,7 @@ if ($result = $connection->query($consultar)) {
 		  echo "<p>No se ha podido crear el comentario</p>";
 	  }
 	  
-	  header('Refresh:5; url=comentarios.php',true,303);
+	  header('Refresh:0; url=comentarios.php',true,303);
 
 
 	  
@@ -91,7 +91,7 @@ if ($result = $connection->query($consultar)) {
 <?php
 }else{
 	echo "<p>No tiene los permisos adecuados</p>";
-    header("Refresh:5; url=indexlolo.php",true,303);
+    header("Refresh:0; url=indexlolo.php",true,303);
 }
 
 	?>
