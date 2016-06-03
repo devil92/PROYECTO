@@ -37,11 +37,11 @@ include("db_configuration.php");
 			<?php if (!isset($_POST["Guardar"])) : ?>
 			<form id="confiusu" method="post" action="mipanel.php" >
 				<p id="porculero"><label for="nombre">Nuevo Nombre de usuario:</label></p>
-                        <input name="cambiarnombre" type="text" id="nickusuario" class="nombre" ></p>
+                        <input name="cambiarnombre" type="text" id="nickusuario" class="nombre" required ></p>
 				<p><label for="apellidos">Nuevo Apellido:</label></p>
-                        <input name="cambiarapellido" type="text" id="apellidos" class="apellidos" ></p>
+                        <input name="cambiarapellido" type="text" id="apellidos" class="apellidos" required ></p>
 						<p><label for="email">Nuevo email:</label></p>
-                        <input name="cambiaremail" type="email" id="correo" class="email" ></p>
+                        <input name="cambiaremail" type="email" id="correo" class="email" required/ ></p>
 				<p><label for="pass">Nueva contraseña:</label></p>
                         <input name="cambiarpass" type="password" id="contrasena" class="contrasena" required/></p>
 
@@ -69,7 +69,7 @@ include("db_configuration.php");
 	  if($connection->query($consulta)==true){
                 echo "Su usuario se ha modificado correctamente";
                 session_destroy();
-				header('Refresh:5; url=indexlolo.php',true,303);
+				header('Refresh:2; url=indexlolo.php',true,303);
 				
             }else{
                 echo "No se ha podido modificar su usuario";   
