@@ -10,7 +10,7 @@ session_start();
 
  <script src="tinymce/js/tinymce/tinymce.min.js"></script>
   <script>tinymce.init({ selector:'textarea' });</script>
-
+<meta charset='utf8'>
 </head>
 <link rel="stylesheet" type="text/css" href="indexlolo.css"> 
 <style type="text/css"> </style> 

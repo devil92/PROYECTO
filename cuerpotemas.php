@@ -1,3 +1,4 @@
+<meta charset='utf8'>
 <?php
 include("db_configuration.php");
 ?>
