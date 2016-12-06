@@ -1,19 +1,10 @@
 <?php
+include("db_configuration.php");
 
-session_start();
-
-    if (isset($_SESSION['usuario'])&&($_SESSION['usuario']!=='NULL')){
-        echo "";
-    }
-    else {
-        echo "<h2>Acceso denegado, redireccionando...</h2>";
-        echo "<style>div {display:none;}<style>";
-    header('Refresh:1; url=indexlolo.php',True,303);
-}
 ?>
 <?php
-include("db_configuration.php");
-?>
+session_start();
+?> 
 <html>
 <head><title>RICON DE LOLASO</title></head>
 <link rel="stylesheet" type="text/css" href="indexlolo.css"> 
@@ -28,22 +19,27 @@ include("db_configuration.php");
 		<div id="menu"> 
 			<ul id="listamenu">
 				<li><a href="indexlolo.php">INICIO</a></li>
+				<li><a href="indexlolo.php">INFORMATICA</a></li>
+				<li><a href="indexlolo.php">DEPORTES</a></li>
+				<li><a href="indexlolo.php">E-SPORT</a></li>
+				<li><a href="indexlolo.php">JUEGOS</a></li>
 			</ul>	
 		</div>
 		<div id="temas">
 			<div id="panel">
 			<li><a name="verperfil" href="verperfil.php">Ver Perfil</a></li>
 			<li><a name="cambiarperfil" href="mipanel.php">Cambiar datos</a></li>
+			<li><a name="cambiartema" href="cambiartema.php">Cambiar tema</a></li>
 			<?php if (!isset($_POST["Guardar"])) : ?>
 			<form id="confiusu" method="post" action="mipanel.php" >
 				<p id="porculero"><label for="nombre">Nuevo Nombre de usuario:</label></p>
-                        <input name="cambiarnombre" type="text" id="nickusuario" class="nombre" required ></p>
+                        <input name="cambiarnombre" type="text" id="nickusuario" class="nombre" ></p>
 				<p><label for="apellidos">Nuevo Apellido:</label></p>
-                        <input name="cambiarapellido" type="text" id="apellidos" class="apellidos" required ></p>
+                        <input name="cambiarapellido" type="text" id="apellidos" class="apellidos" ></p>
 						<p><label for="email">Nuevo email:</label></p>
-                        <input name="cambiaremail" type="email" id="correo" class="email" required/ ></p>
+                        <input name="cambiaremail" type="email" id="correo" class="email" ></p>
 				<p><label for="pass">Nueva contraseña:</label></p>
-                        <input name="cambiarpass" type="password" id="contrasena" class="contrasena" required/></p>
+                        <input name="cambiarpass" type="password" id="contrasena" class="contrasena" ></p>
 
 				<p><input type="submit" value="Guardar" name="Guardar" /></p>
 				
@@ -65,11 +61,11 @@ include("db_configuration.php");
 	  $cambiaremail=$_POST['cambiaremail'];
 	  $cambiarpass=$_POST['cambiarpass'];
 	  $consulta="UPDATE usuarios SET nombre='$cambiarnombre',apellidos='$cambiarapellido', email='$cambiaremail', contrasena="."'".md5($cambiarpass)."'"." where nickusuario="."'".$_SESSION['usuario']."'".";";
-      //var_dump($consulta);
+      var_dump($consulta);
 	  if($connection->query($consulta)==true){
                 echo "Su usuario se ha modificado correctamente";
                 session_destroy();
-				header('Refresh:2; url=indexlolo.php',true,303);
+				header('Refresh:5; url=indexlolo.php',true,303);
 				
             }else{
                 echo "No se ha podido modificar su usuario";   

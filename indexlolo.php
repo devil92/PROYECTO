@@ -1,5 +1,6 @@
 <?php
 include("db_configuration.php");
+
 ?>
 <?php
 session_start();
@@ -10,7 +11,7 @@ session_start();
 
  <script src="tinymce/js/tinymce/tinymce.min.js"></script>
   <script>tinymce.init({ selector:'textarea' });</script>
-<meta charset='utf8'>
+
 </head>
 <link rel="stylesheet" type="text/css" href="indexlolo.css"> 
 <style type="text/css"> </style> 
@@ -27,7 +28,7 @@ session_start();
 
 			</ul>	
 		</div>
-		<div id="temas" border="0px">
+		<div id="temas" border="1px">
 		<?php
 		if(!isset($_GET["carga"])){
 			echo "<p><b>Foros</b><p>";
@@ -51,7 +52,6 @@ session_start();
 			<div id="login">
 				<div id="loginaso">
 				<?php  if (!isset($_SESSION['usuario'])) : ?>
-				
 					<form action="login.php" method="POST">
 					<p>Nombre de usuario</p>
 						<input type="text" size="12px" align="center" placeholder="usuario" name="txtusuario" />
@@ -66,6 +66,7 @@ session_start();
 				<?php else: ?>
 					<h3>Bienvenido:</h3> <?php
 					echo $_SESSION['usuario'];?>
+					<?php include("cambiar_tema_color.php"); echo $_SESSION['tema']; ?>
 					<p><a href="verperfil.php">Ver Perfil</a></p>
 					<?php
 					

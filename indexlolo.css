@@ -52,11 +52,11 @@ color: #fff;
 
 /*contendero de cuerpo*/
 #temas {
-background-color:#BDBDBD;
+background-color:#8A4B08;
 color:black;	
 width:1020px; 
-min-height:325px;
-padding:20px 20px 50px 20px;
+min-height:425px;
+padding:20px 20px 20px 20px;
 }
 #panel {
 	border:2px;
@@ -97,11 +97,11 @@ width:152,5px;
 padding-top:20px;
 padding-left:28px;
 padding-bottom:20px;
-background-color: #2175bc;
+background-color: #2E64FE;
 }
 
 #loginaso {
-width:172px; 
+width:170px; 
 
 
 }
@@ -110,7 +110,7 @@ width:172px;
 padding:20px 0px 20px 20px;
 width:160px; 
 
-background-color:#2175bc;
+background-color:#045FB4;
 	
 }
 

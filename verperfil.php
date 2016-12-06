@@ -1,19 +1,10 @@
 <?php
+include("db_configuration.php");
 
-session_start();
-
-    if (isset($_SESSION['usuario'])&&($_SESSION['usuario']!=='NULL')){
-        echo "";
-    }
-    else {
-        echo "<h2>Acceso denegado, redireccionando...</h2>";
-        echo "<style>div {display:none;}<style>";
-    header('Refresh:1; url=indexlolo.php',True,303);
-}
 ?>
 <?php
-include("db_configuration.php");
-?>
+session_start();
+?> 
 <html>
 <head><title>RICON DE LOLASO</title></head>
 <link rel="stylesheet" type="text/css" href="indexlolo.css"> 
@@ -43,12 +34,17 @@ include("db_configuration.php");
 		<div id="menu"> 
 			<ul id="listamenu">
 				<li><a href="indexlolo.php">INICIO</a></li>
-
+				<li><a href="indexlolo.php">INFORMATICA</a></li>
+				<li><a href="indexlolo.php">DEPORTES</a></li>
+				<li><a href="indexlolo.php">E-SPORT</a></li>
+				<li><a href="indexlolo.php">JUEGOS</a></li>
 			</ul>	
 		</div>
 		<div id="temas">
 			<div id="panel">
+			<li><a name="verperfil" href="verperfil.php">Ver Perfil</a></li>
 			<li><a name="cambiarperfil" href="mipanel.php">Cambiar datos</a></li>
+			<?php include("cambiar_tema_color.php"); echo "<br>tema actual: ". $_SESSION['tema']; ?>
 			</div>
 			<table id="tabla">
 				<tr>

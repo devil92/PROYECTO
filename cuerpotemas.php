@@ -1,4 +1,3 @@
-<meta charset='utf8'>
 <?php
 include("db_configuration.php");
 ?>
@@ -12,7 +11,6 @@ include("db_configuration.php");
               printf("Connection failed: %s\n", $mysqli->connect_error);
               exit();
           }
-		  			  if (!$connection->set_charset("utf8")){}
           //MAKING A SELECT QUERY
           /* Consultas de selección que devuelven un conjunto de resultados */
           if ($result = $connection->query("SELECT * FROM temas where id_foro=".$foro.";")) {

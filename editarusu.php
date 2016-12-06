@@ -40,24 +40,12 @@ include("db_configuration.php");
 			echo "	<p><label for='email'>Nuevo email:</label></p>";
             echo "  <input name='cambiaremail' type='email' id='correo' class='email' value="."'".$obj->email."'"."></p>";
 			echo "	<label for='tipoacceso'>Tipo de usuario:</label></p>";
-			
-			echo "<select class='tipoacc' name='tipoacceso'>";
-		var_dump($obj->tipoacceso);
-		if ($obj->tipoacceso=="admin"){
-		echo "<option selected value=\"admin\">admin</option>";
-		echo "<option value=\"usuario\">usuario</option>";
-		echo "<br>";
-		}else{
-		echo "<option  value=\"admin\">admin</option>";
-		echo "<option selected value=\"usuario\">usuario</option>";
-		echo "<br>";
-		}
-
-
-echo "</select>";
-			
+			echo "			<select id='tipoacceso' name='tipoacceso'>";
+			echo "				<option value='usuario'>usuario</option>";
+			echo "				<option value='admin'>admin</option>";
+			echo "			</select>";
 			echo "	<p><label for='pass'>Nueva contraseña:</label></p>";
-            echo "   <input name='cambiarpass' type='password' id='contrasena' class='contrasena' required/ ></p>";
+            echo "   <input name='cambiarpass' type='password' id='contrasena' class='contrasena' ></p>";
 			echo "<input name='idaso' type='hidden' id='principal' value=".$_GET['id'].">";
 				
 
@@ -79,15 +67,14 @@ echo "</select>";
 	  $cambiarapellido=$_POST['cambiarapellido'];
 	  $cambiaremail=$_POST['cambiaremail'];
 	  $cambiarpass=$_POST['cambiarpass'];
-	  $tipoacc=$_POST['tipoacceso'];
 	  $idea=$_POST['idaso'];
-	  $consulta="UPDATE usuarios SET nombre='$cambiarnombre',apellidos='$cambiarapellido', email='$cambiaremail', tipoacceso='$tipoacc' , contrasena="."'".md5($cambiarpass)."'"." where id_usuario='$idea';";
+	  $consulta="UPDATE usuarios SET nombre='$cambiarnombre',apellidos='$cambiarapellido', email='$cambiaremail', contrasena="."'".md5($cambiarpass)."'"." where id_usuario='$idea';";
 	 
       //var_dump($consulta);
 	  //echo $idea;
 	  if($connection->query($consulta)==true){
                 echo "Su usuario se ha modificado correctamente";
-			 header('Refresh:2; url=usuarios.php',true,303);
+			 header('Refresh:5; url=usuarios.php',true,303);
 				
             }else{
                 echo "No se ha podido modificar su usuario";   

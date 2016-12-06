@@ -19,7 +19,6 @@ if ($connection->connect_errno) {
 $consulta="SELECT * FROM usuarios where nickusuario='".$_POST["txtusuario"]."' and contrasena=md5('".$_POST["txtpassword"]."');";
 var_dump($consulta);
 if ($result = $connection->query($consulta)) {
-
     if ($result->num_rows===0) {
       echo "LOGIN O PASS INVALIDO";
       } else {

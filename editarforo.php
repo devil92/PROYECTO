@@ -29,7 +29,7 @@ include("db_configuration.php");
 						$consultar="SELECT * FROM usuarios;";
 						var_dump($consultar);
 						if ($result = $connection->query($consultar)) {
-								$result2 = $connection->query("SELECT * FROM usuarios where tipoacceso='admin'");
+								$result2 = $connection->query("SELECT * FROM usuarios");
 							while($obj = $result2->fetch_object()) {
 								echo "<option value=\"".$obj->id_usuario."\">".$obj->nickusuario."</option>";
 								echo "<br>";
@@ -40,27 +40,14 @@ include("db_configuration.php");
 							</select>
 						<?php
 						}//cierra el primer IF
-						?>
+						?>	
+                    <p><label for="nombre">Nombre Foro:</label></p>
+                        <input name="nombre_foro" type="text" id="nombre" class="nombre" ></p>
 
-						<?php
-			
-			 //CREATING THE CONNECTION
-		$connection = new mysqli($db_host, $db_user, $db_password, $db_name);
-		//TESTING IF THE CONNECTION WAS RIGHT
-		if ($connection->connect_errno) {
-			printf("Connection failed: %s\n", $connection->connect_error);
-			exit();
-		}
-			$result=$connection->query("SELECT * FROM foro where id_foro=".$_GET['id']."");
-				$obj = $result->fetch_object();
-                echo    "<p><label for='nombre'>Nombre Foro:</label></p>";
-                echo    "<input name='nombre_foro' type='text' id='nombre' class='nombre' value="."'".$obj->nombre_foro."'"."></p>";
-
-                echo    "<p id='bot'><input name='Enviar' type='submit' id='boton' value='Enviar' class='boton'/></p>";
-				echo "<input name='get' type='hidden' id='principa' value=".$_GET['id'].">";
-                echo "</form>";
-            echo "</div>";
-			?>
+                    <p id="bot"><input name="Enviar" type="submit" id="boton" value="Enviar" class="boton"/></p>
+					<?php echo "<input name='get' type='hidden' id='principa' value=".$_GET['id'].">";?>
+                </form>
+            </div>
 
 			<?php else: ?>
 			<?php
@@ -82,7 +69,7 @@ include("db_configuration.php");
 	  //echo $idea;
 	  if($connection->query($consulta)==true){
                 echo "Su foro se ha modificado correctamente";
-			  header('Refresh:2; url=foros.php',true,303);
+			  header('Refresh:3; url=foros.php',true,303);
 				
             }else{
                 echo "No se ha podido modificar el foro seleccionado";   

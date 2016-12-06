@@ -22,13 +22,14 @@ include("db_configuration.php");
     <title>LISTADO POST</title>
   </head>
   <body>
-  <table border="5" id="tablita" style="margin-top:10px; margin-bottom:10px;">
+  <table border="5" id="tablita">
   <tr>
     <td><b><a href="usuarios.php"> Usuarios </a></td></b>
     <td><b><a href="foros.php">Foros</a></td></b>
     <td><b><a href="temas.php">Temas</a></td></b>
     <td><b><a href="post.php">Post</a></td></b>
     <td><b><a href="comentarios.php">Comentarios</a></td></b>
+	<td><b><a href="grafica.php">Grafica</a></td></b>
 	<td><b><a href="indexlolo.php">Inicio</a></td></b>
     </tr>
     <tr>
@@ -83,7 +84,7 @@ include("db_configuration.php");
 
     </table>
 	<p>
-	</a><input name="anadirusu" a class='ajax' href="anadirpost.php" title="Añadir post" type="submit" id="boton" value="Añadir" style="margin-left:300px" class="boton"/ ></p>
+	</a><input name="anadirpost" a class='ajax' href="anadirpost.php" title="Añadir post" type="submit" id="boton" value="Añadir" class="boton"/></p>
 <script src="jquery.min.js"></script>
 <script src="jquery.colorbox.js"></script>
 <script>
