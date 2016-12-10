@@ -66,7 +66,7 @@ session_start();
 				<?php else: ?>
 					<h3>Bienvenido:</h3> <?php
 					echo $_SESSION['usuario'];?>
-					<?php include("cambiar_tema_color.php"); echo $_SESSION['tema']; ?>
+					<?php include("cambiar_tema_color.php"); ?>
 					<p><a href="verperfil.php">Ver Perfil</a></p>
 					<?php
 					

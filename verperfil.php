@@ -44,7 +44,6 @@ session_start();
 			<div id="panel">
 			<li><a name="verperfil" href="verperfil.php">Ver Perfil</a></li>
 			<li><a name="cambiarperfil" href="mipanel.php">Cambiar datos</a></li>
-			<?php include("cambiar_tema_color.php"); echo "<br>tema actual: ". $_SESSION['tema']; ?>
 			</div>
 			<table id="tabla">
 				<tr>

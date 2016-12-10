@@ -30,6 +30,7 @@ include_once("db_configuration.php");
     <td><b><a href="post.php">Post</a></td></b>
     <td><b><a href="comentarios.php">Comentarios</a></td></b>
 	<td><b><a href="grafica.php">Grafica</a></td></b>
+	<td><b><a href="verpdf.php">Generar PDF</a></td></b>
 	<td><b><a href="indexlolo.php">Inicio</a></td></b>
     </tr>
     <tr>

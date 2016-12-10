@@ -1,8 +1,7 @@
 <?php
 
 session_start();
-
-if(isset($_SESSION['id']) && isset($_SESSION['ns']) && $_SESSION['ns'] == 'admin'){
+if(isset($_SESSION['usuario']) && isset($_SESSION['tipoacceso']) && $_SESSION['tipoacceso'] == 'admin'){
 
 ?>
 <?php
@@ -12,35 +11,36 @@ include("db_configuration.php");
 <head></head>
 <body>
 <div id="cuerpo">
- <?php if (!isset($_POST["Enviar"])) : ?> 
+ <?php if (!isset($_POST["Enviar"])) : ?>
                 <form id="form-login" method="post" action="anadirusu.php" >
-					<p><label for="nickusuario">Nombre de usuario:</label></p>
+                                        <p><label for="nickusuario">Nombre de usuario:</label></p>
                         <input name="nickusuario" type="text" id="nickusuario" class="nickusuario" autofocus=""/ ></p>
-						
+
                     <p><label for="nombre">Nombre:</label></p>
                         <input name="nombre" type="text" id="nombre" class="nombre" ></p>
 
                     <p><label for="apellidos">Apellidos:</label></p>
                         <input name="apellidos" type="text" id="apellidos" class="apellidos" /></p>
 
- 
+
                     <p><label for="email">Correo:</label></p>
                         <input name="email" type="text" id="email" class="email" /></p>
- 
+
                     <p><label for="pass">Contraseña:</label></p>
                         <input name="contrasena" type="password" id="contrasena" class="pass" / ></p>
-						
-					<p><label for="tipoacceso">Tipo de usuario:</label></p>
-						<select id="tipoacceso" name="tipoacceso">
-							<option value="usuario">usuario</option>
-							<option value="admin">admin</option>
-						</select>
- 
+
+                                        <p><label for="tipoacceso">Tipo de usuario:</label></p>
+                                                <select id="tipoacceso" name="tipoacceso">
+                                                        <option value="usuario">usuario</option>
+                                                        <option value="admin">admin</option>
+                                                </select>
+
                     <p id="bot"><input name="Enviar" type="submit" id="boton" value="Enviar" class="boton"/></p>
                 </form>
             </div>
 </body>
 </html>
+
 <?php else: ?>
 <?php
       //CREATING THE CONNECTION
@@ -64,14 +64,14 @@ include("db_configuration.php");
 
 
 	  
-?>	  
+?>
 <?php endif ?>
 <?php
 }else{
-	echo "<p>No tiene los permisos adecuados</p>";
-
+        echo "<p>No tiene los permisos adecuados</p>";
+    header("Refresh:0; url=indexlolo.php",true,303);
 }
-header("Refresh:5; url=indexlolo.php",true,303);
-	?>
+
+
 
 

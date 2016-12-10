@@ -29,7 +29,6 @@ session_start();
 			<div id="panel">
 			<li><a name="verperfil" href="verperfil.php">Ver Perfil</a></li>
 			<li><a name="cambiarperfil" href="mipanel.php">Cambiar datos</a></li>
-			<li><a name="cambiartema" href="cambiartema.php">Cambiar tema</a></li>
 			<?php if (!isset($_POST["Guardar"])) : ?>
 			<form id="confiusu" method="post" action="mipanel.php" >
 				<p id="porculero"><label for="nombre">Nuevo Nombre de usuario:</label></p>
