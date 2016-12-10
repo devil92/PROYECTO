@@ -1,6 +1,6 @@
 <?php
-$dbname='proyecto';
-$dbuser='merino';
-$dbpassword='1234';
+$dbname='forololo';
+$dbuser='root';
+$dbpassword='';
 $dbhost='localhost';
 ?>
