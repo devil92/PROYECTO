@@ -6,9 +6,9 @@
     $db_password=$_ENV['OPENSHIFT_MYSQL_DB_PASSWORD']; //Openshift db password OPENSHIFT_MYSQL_DB_PASSWORD
     $db_name=$_ENV['OPENSHIFT_MYSQL_DB_NAME']; //Openshift db password OPENSHIFT_MYSQL_DB_PASSWORD
   } else {
-    $db_user="root"; //my db user
-    $db_host="localhost"; //my db host
-    $db_password=""; //my db password
-    $db_name="forololo"; //my db name
+    $db_user="adminz2xUtyZ"; //my db user
+    $db_host="phplolo-forololo.rhcloud.comchange"; //my db host
+    $db_password="w3z4Rg5Rx-zQ"; //my db password
+    $db_name="phplolo"; //my db name
   }
 ?>
